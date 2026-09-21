@@ -21,7 +21,7 @@ langBtns.forEach(btn => {
     });
 });
 
-// Smooth Scrolling for Navigation
+// Smooth Scrolling for Navigation with better easing
 const navLinks = document.querySelectorAll('.nav-links a');
 
 navLinks.forEach(link => {
@@ -31,10 +31,18 @@ navLinks.forEach(link => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const headerOffset = 100;
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
+            
+            // Update active state
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
         }
     });
 });
@@ -156,37 +164,48 @@ if (bookingForm) {
     });
 }
 
-// Enter Button Animation
+// Enter Button Animation with smooth scroll
 const enterButton = document.querySelector('.enter-button');
 
 if (enterButton) {
     enterButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
+        const mainNav = document.querySelector('.main-nav');
+        if (mainNav) {
+            mainNav.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 }
 
-// Scroll-based Navigation Highlight
+// Scroll-based Navigation Highlight with better performance
 const sections = document.querySelectorAll('section[id]');
+let ticking = false;
 
 window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.style.color = '');
-            if (navLink) {
-                navLink.style.color = '#ffffff';
-            }
-        }
-    });
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 150;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    if (navLink) {
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+            
+            ticking = false;
+        });
+        ticking = true;
+    }
 });
 
 // Image Lazy Loading
@@ -198,14 +217,21 @@ if ('loading' in HTMLImageElement.prototype) {
     });
 }
 
-// Add subtle parallax effect to hero
+// Add subtle parallax effect to hero with better performance
 const heroImage = document.querySelector('.hero-image');
 
 if (heroImage) {
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.3;
-        heroImage.style.transform = `translateY(${rate}px)`;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.2;
+                heroImage.style.transform = `translateY(${rate}px)`;
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }
 
@@ -217,3 +243,30 @@ if (pressAccessModal) {
         }
     });
 }
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Add staggered animation classes to list items
+document.querySelectorAll('.track-item, .release-item, .venue-item, .photo-item, .article-link').forEach((item, index) => {
+    const staggerClass = `stagger-${(index % 5) + 1}`;
+    item.classList.add('fade-in-up', staggerClass);
+    item.style.opacity = '0'; // Initially hidden
+});

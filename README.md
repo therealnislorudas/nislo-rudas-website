@@ -1,17 +1,45 @@
 # Clovis DJ Website Clone
 
-This is a pixel-perfect clone of the official Clovis DJ website (https://www.clovisdj.com/), recreated with semantic HTML5, modern CSS, and vanilla JavaScript.
+This is a pixel-perfect clone of the official Clovis DJ website (https://www.clovisdj.com/), recreated with semantic HTML5, modern CSS, and vanilla JavaScript with enhanced UX and animations.
 
 ## Features
 
 - **Dark Theme**: Minimalist dark color scheme matching the original design
-- **Responsive Design**: Fully responsive layout that works on all devices
+- **Responsive Design**: Fully responsive layout optimized for desktop and mobile
 - **Bilingual Support**: English and French biography with language toggle
 - **Media Integration**: SoundCloud and Bandcamp embeds for music playback
 - **Interactive Navigation**: Smooth scrolling navigation with section highlighting
 - **Contact Form**: Functional booking request form
 - **Press Kit**: Downloadable press materials with access code protection
 - **Social Links**: Direct links to Instagram, SoundCloud, Resident Advisor, and Bandcamp
+
+## Enhanced UX & Animations
+
+### Scroll Experience
+- **Smooth Scrolling**: Native smooth scroll behavior with JavaScript enhancement
+- **Section Highlighting**: Active navigation links update automatically on scroll
+- **Parallax Effect**: Subtle parallax on hero image for depth perception
+- **Performance Optimized**: Uses requestAnimationFrame for smooth 60fps animations
+
+### Interactive Elements
+- **Hover Effects**: Refined hover states on all interactive elements
+- **Button Feedback**: Visual feedback on button clicks and hovers
+- **Card Animations**: Subtle lift and scale effects on release cards
+- **Link Animations**: Smooth transitions and underline animations
+- **Modal Transitions**: Fade and scale animations for modal appearance
+
+### Mobile Experience
+- **Touch-Friendly**: 44px minimum tap targets for accessibility
+- **Tap Feedback**: Visual feedback on touch interactions
+- **Responsive Layout**: Optimized layouts for all screen sizes
+- **Touch Scroll**: Momentum scrolling on iOS devices
+- **Mobile Navigation**: Adapted spacing and sizing for mobile
+
+### Page Load Animations
+- **Staggered Reveals**: Elements animate in sequence for polished appearance
+- **Fade Effects**: Smooth fade-in animations for sections
+- **Scroll Animations**: Elements animate as they enter viewport
+- **Performance**: CSS animations with hardware acceleration
 
 ## Project Structure
 
