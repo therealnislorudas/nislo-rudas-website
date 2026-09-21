@@ -6,11 +6,9 @@ langBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.dataset.lang;
         
-        // Update active button
         langBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         
-        // Show/hide content
         bioContents.forEach(content => {
             if (content.classList.contains(lang)) {
                 content.style.display = 'block';
@@ -21,75 +19,51 @@ langBtns.forEach(btn => {
     });
 });
 
-// Smooth Scrolling for Navigation with better easing
-const navLinks = document.querySelectorAll('.nav-links a');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
-        if (targetSection) {
-            const headerOffset = 100;
-            const elementPosition = targetSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
                 behavior: 'smooth'
             });
-            
-            // Update active state
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
         }
     });
 });
 
-// Press Access Modal
+// Modal
 const unlockBtn = document.querySelector('.unlock-btn');
-const pressAccessModal = document.getElementById('pressAccessModal');
+const pressModal = document.getElementById('pressModal');
 const cancelBtn = document.querySelector('.cancel-btn');
 const unlockModalBtn = document.querySelector('.unlock-modal-btn');
 
-if (unlockBtn && pressAccessModal) {
+if (unlockBtn && pressModal) {
     unlockBtn.addEventListener('click', () => {
-        pressAccessModal.classList.add('active');
+        pressModal.classList.add('active');
     });
 }
 
-if (cancelBtn && pressAccessModal) {
+if (cancelBtn && pressModal) {
     cancelBtn.addEventListener('click', () => {
-        pressAccessModal.classList.remove('active');
+        pressModal.classList.remove('active');
     });
 }
 
-if (unlockModalBtn && pressAccessModal) {
+if (unlockModalBtn && pressModal) {
     unlockModalBtn.addEventListener('click', () => {
-        const accessCode = document.querySelector('.access-code-input').value;
+        const accessCode = document.querySelector('.access-input').value;
         if (accessCode) {
-            // Here you would normally validate the code
-            alert('Access code entered: ' + accessCode);
-            pressAccessModal.classList.remove('active');
+            alert('Access code: ' + accessCode);
+            pressModal.classList.remove('active');
         } else {
-            alert('Please enter an access code');
+            alert('Please enter access code');
         }
     });
 }
 
-// Close modal when clicking outside
-if (pressAccessModal) {
-    pressAccessModal.addEventListener('click', (e) => {
-        if (e.target === pressAccessModal) {
-            pressAccessModal.classList.remove('active');
-        }
-    });
-}
-
-// Copy Bio Functionality
+// Copy Bio
 const copyBioBtn = document.querySelector('.copy-bio-btn');
-
 if (copyBioBtn) {
     copyBioBtn.addEventListener('click', () => {
         const bioText = `Clovis found his way behind the decks at nineteen. More than two decades later, the Los Angeles native has moved through some of dance music's most distinctive scenes — from New York to Bucharest and now Berlin, where he holds a residency at Club der Visionaere and co-runs Understory with Matt Foley.
@@ -99,174 +73,33 @@ His path has taken him from late-night Los Angeles warehouses to festivals inclu
 What connects it all is a refusal to settle into one mode. A dark warehouse, a slower daytime session, a leftfield podcast — each calls for something different. The room, the hour and the people come first. Range without losing the thread; eclecticism without becoming arbitrary. Mood, context and atmosphere over any fixed formula.`;
         
         navigator.clipboard.writeText(bioText).then(() => {
-            showToast('Bio copied to clipboard');
-        }).catch(err => {
-            console.error('Failed to copy bio: ', err);
+            alert('Bio copied to clipboard');
         });
     });
 }
 
-// Copy Email Functionality
-const contactLink = document.querySelector('.contact-link');
-const emailToast = document.getElementById('emailToast');
-
-if (contactLink && emailToast) {
-    contactLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        const email = contactLink.textContent;
-        
-        navigator.clipboard.writeText(email).then(() => {
-            emailToast.classList.add('active');
-            setTimeout(() => {
-                emailToast.classList.remove('active');
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy email: ', err);
-            // Fallback: open mail client
-            window.location.href = 'mailto:' + email;
-        });
-    });
-}
-
-// Toast Notification
-function showToast(message) {
-    const toast = document.getElementById('emailToast');
-    if (toast) {
-        toast.querySelector('p').textContent = message;
-        toast.classList.add('active');
-        setTimeout(() => {
-            toast.classList.remove('active');
-        }, 2000);
-    }
-}
-
-// Booking Form Submission
+// Booking Form
 const bookingForm = document.getElementById('bookingForm');
-
 if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        const formData = new FormData(bookingForm);
-        const bookingData = {
-            date: formData.get('date'),
-            city: formData.get('city'),
-            venue: formData.get('venue'),
-            budget: formData.get('budget'),
-            message: formData.get('message')
-        };
-        
-        console.log('Booking Request:', bookingData);
-        
-        // Here you would normally send this data to a server
-        alert('Booking request submitted! We will get back to you soon.');
+        alert('Booking request submitted');
         bookingForm.reset();
     });
 }
 
-// Enter Button Animation with smooth scroll
-const enterButton = document.querySelector('.enter-button');
-
-if (enterButton) {
-    enterButton.addEventListener('click', () => {
-        const mainNav = document.querySelector('.main-nav');
-        if (mainNav) {
-            mainNav.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+// Close modal on outside click
+if (pressModal) {
+    pressModal.addEventListener('click', (e) => {
+        if (e.target === pressModal) {
+            pressModal.classList.remove('active');
         }
     });
 }
 
-// Scroll-based Navigation Highlight with better performance
-const sections = document.querySelectorAll('section[id]');
-let ticking = false;
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const scrollY = window.pageYOffset;
-            
-            sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 150;
-                const sectionId = section.getAttribute('id');
-                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-                
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    if (navLink) {
-                        navLink.classList.add('active');
-                    }
-                }
-            });
-            
-            ticking = false;
-        });
-        ticking = true;
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && pressModal && pressModal.classList.contains('active')) {
+        pressModal.classList.remove('active');
     }
-});
-
-// Image Lazy Loading
-const images = document.querySelectorAll('img');
-
-if ('loading' in HTMLImageElement.prototype) {
-    images.forEach(img => {
-        img.loading = 'lazy';
-    });
-}
-
-// Add subtle parallax effect to hero with better performance
-const heroImage = document.querySelector('.hero-image');
-
-if (heroImage) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.2;
-                heroImage.style.transform = `translateY(${rate}px)`;
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-}
-
-// Keyboard navigation for modal
-if (pressAccessModal) {
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && pressAccessModal.classList.contains('active')) {
-            pressAccessModal.classList.remove('active');
-        }
-    });
-}
-
-// Intersection Observer for scroll animations
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
-});
-
-// Add staggered animation classes to list items
-document.querySelectorAll('.track-item, .release-item, .venue-item, .photo-item, .article-link').forEach((item, index) => {
-    const staggerClass = `stagger-${(index % 5) + 1}`;
-    item.classList.add('fade-in-up', staggerClass);
-    item.style.opacity = '0'; // Initially hidden
 });
