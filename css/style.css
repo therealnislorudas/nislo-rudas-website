@@ -35,6 +35,8 @@ button {
     color: #fff;
     padding: 8px 16px;
     font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 button:hover {
@@ -48,82 +50,111 @@ img {
     display: block;
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Main Layout */
+.main-container {
+    display: flex;
+    min-height: 100vh;
 }
 
-/* Header */
-header {
-    min-height: 100vh;
+/* Sidebar Navigation */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    border-right: 1px solid #333;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 40px 20px;
+    z-index: 100;
 }
 
-.enter-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 12px;
-    border: none;
-    background: none;
-    color: #fff;
-    text-decoration: none;
+.sidebar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.hero-image {
-    max-width: 400px;
-    margin: 0 auto 20px;
+.sidebar-nav li {
+    padding: 10px 0;
 }
 
-.hero-image img {
-    width: 100%;
-    height: auto;
-}
-
-.hero-subtitle {
-    font-size: 12px;
+.sidebar-nav a {
+    font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Navigation */
-nav {
-    padding: 40px 0;
-    text-align: center;
-    border-bottom: 1px solid #333;
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    color: #fff;
 }
 
-nav h1 {
-    font-size: 48px;
-    margin-bottom: 30px;
-    letter-spacing: 4px;
+/* Main Content */
+.main-content {
+    margin-left: 200px;
+    flex: 1;
+    padding: 40px 60px;
+    max-width: calc(100% - 200px);
 }
 
-nav ul {
-    list-style: none;
+/* Hero Section */
+.hero {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    align-items: center;
+    padding: 60px;
+    margin-left: -60px;
+    margin-right: -60px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-nav a {
-    font-size: 12px;
+.hero-content {
+    max-width: 600px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 72px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 500px;
 }
 
 /* Sections */
 section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: 0 auto;
+    padding: 60px 0;
+    max-width: 800px;
 }
 
 h2 {
@@ -394,10 +425,8 @@ h2 {
 
 /* Contact */
 .contact-section {
-    padding: 60px 20px;
+    padding: 60px 0;
     max-width: 600px;
-    margin: 0 auto;
-    border-top: 1px solid #333;
 }
 
 .contact-item {
@@ -496,17 +525,34 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 20px;
+    }
+    
+    .sidebar-nav {
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .hero {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 40px 20px;
+    }
+    
     .identity-grid {
         grid-template-columns: 1fr;
-    }
-    
-    nav ul {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    nav h1 {
-        font-size: 32px;
     }
     
     .releases-grid,
@@ -524,5 +570,9 @@ h2 {
     .footer {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
     }
 }

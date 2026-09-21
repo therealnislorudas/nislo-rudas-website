@@ -7,399 +7,429 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <a href="#" class="enter-btn">Enter</a>
-        <div class="hero-image">
-            <img src="assets/images/clovis-press-photo.jpg" alt="Clovis — press photo">
-        </div>
-        <p class="hero-subtitle">DJ & Producer — Berlin</p>
-    </header>
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#identity" class="active">Identity</a></li>
+                    <li><a href="#mixes">Mixes</a></li>
+                    <li><a href="#releases">Releases</a></li>
+                    <li><a href="#live">Live</a></li>
+                    <li><a href="#venues">Venues</a></li>
+                    <li><a href="#gigs">Gigs</a></li>
+                    <li><a href="#press">Press</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <nav>
-        <h1>Clovis</h1>
-        <ul>
-            <li><a href="#listen">Listen</a></li>
-            <li><a href="#watch">Watch</a></li>
-            <li><a href="#press">Press kit</a></li>
-            <li><a href="#booking">Book</a></li>
-        </ul>
-    </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero" id="identity">
+                <div class="hero-content">
+                    <h1>Clovis</h1>
+                    <p class="hero-subtitle">DJ & Producer — Berlin</p>
+                    <div class="hero-buttons">
+                        <a href="#mixes"><button>Listen</button></a>
+                        <a href="#live"><button>Watch</button></                        <a href="#press"><button>Press kit</button></a>
+                        <a href="#booking"><button>Book</button></a>
+                    </div>
+                    <p class="hero-description">
+                        Over two decades behind the decks, from Los Angeles through New York, Bucharest and Berlin. Resident at Club der Visionaere — mood, context and atmosphere first, never any fixed formula.
+                    </p>
+                </div>
+            </section>
 
-    <section class="identity">
-        <div class="featured-track">
-            <span>▶ BASECAMP 3 — LIVE SET · 02.2026</span>
-            <a href="#listen">LISTEN</a>
-        </div>
+            <!-- Identity Details -->
+            <section id="identity-details">
+                <div class="featured-track">
+                    <span>▶ BASECAMP 3 — LIVE SET · 02.2026</span>
+                    <a href="#mixes">LISTEN</a>
+                </div>
 
-        <div class="identity-grid">
-            <div>
-                <h2>Identity</h2>
-            </div>
-            <div>
-                <div class="label">RESIDENCY</div>
-                <div class="value">Club der Visionaere, Berlin</div>
+                <div class="identity-grid">
+                    <div>
+                        <h2>Identity</h2>
+                    </div>
+                    <div>
+                        <div class="label">RESIDENCY</div>
+                        <div class="value">Club der Visionaere, Berlin</div>
+                        
+                        <div class="label">LABEL</div>
+                        <div class="value">Understory — co-founder</div>
+                        
+                        <div class="label">ALONGSIDE</div>
+                        <div class="value">Rhadoo · Cesar Merveille</div>
+                        <div class="value">Shaun Reeves · Topper · Herodot</div>
+                        
+                        <div class="label">SELECTED FESTIVALS</div>
+                        <div class="value">Sunwaves · Dimensions</div>
+                        <div class="value">Waha · Danube · BPM</div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; font-style: italic; color: #888; margin: 30px 0;">
+                    Mood, context and atmosphere — never any fixed formula.
+                </p>
+            </section>
+
+            <!-- Bio -->
+            <section id="bio">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                </div>
+
+                <div class="bio-content en">
+                    <p><strong>Clovis</strong> found his way behind the decks at nineteen. More than two decades later, the Los Angeles native has moved through some of dance music's most distinctive scenes — from New York to Bucharest and now Berlin, where he holds a residency at Club der Visionaere and co-runs Understory with Matt Foley.</p>
+                    <p>His path has taken him from late-night Los Angeles warehouses to festivals including Sunwaves, Dimensions, Waha and Danube, and into rooms such as Guesthouse, Renate and Hoppetosse — often sharing lineups with Rhadoo, Cesar Merveille, Shaun Reeves and Topper.</p>
+                    <p>What connects it all is a refusal to settle into one mode. A dark warehouse, a slower daytime session, a leftfield podcast — each calls for something different. The room, the hour and the people come first. Range without losing the thread; eclecticism without becoming arbitrary. Mood, context and atmosphere over any fixed formula.</p>
+                </div>
+
+                <div class="bio-content fr" style="display: none;">
+                    <p><strong>Clovis</strong> trouve son chemin derrière les platines à dix-neuf ans. Plus de deux décennies plus tard, ce natif de Los Angeles a traversé certaines des scènes les plus singulières de la dance music — de New York à Bucarest, puis Berlin, où il est résident du Club der Visionaere et co-dirige Understory avec Matt Foley.</p>
+                    <p>Son parcours l'a mené des warehouses nocturnes de Los Angeles aux festivals Sunwaves, Dimensions, Waha et Danube, et dans des salles comme Guesthouse, Renate ou Hoppetosse — partageant souvent l'affiche avec Rhadoo, Cesar Merveille, Shaun Reeves et Topper.</p>
+                    <p>Ce qui relie tout ça : le refus de s'installer dans un seul registre. Une warehouse sombre, une session de jour plus lente, un podcast leftfield — chaque contexte appelle autre chose. La salle, l'heure et les gens passent d'abord. De l'étendue sans perdre le fil ; de l'éclectisme sans devenir arbitraire. L'humeur, le contexte et l'atmosphère avant toute formule figée.</p>
+                </div>
+            </section>
+
+            <!-- Mixes/Listen -->
+            <section id="mixes">
+                <h2>Mixes</h2>
+
+                <div class="category">
+                    <h3>Dance</h3>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/danubebln/danube-podcast-019-clovis-b2b-topper" target="_blank">
+                            <span>Danube Podcast 019 — b2b Topper</span>
+                            <span class="track-source">Danube · SoundCloud</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/meraki-world-tour/clovis-at-meraki-003-berlin" target="_blank">
+                            <span>Live at Meraki [003 · Berlin]</span>
+                            <span class="track-source">Meraki · Live recording</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/meoko/meoko-podcast-series-topper-b2b-clovis-nye-2024-anhalt-berlin" target="_blank">
+                            <span>MEOKO Podcast Series — Topper b2b Clovis NYE</span>
+                            <span class="track-source">Anhalt, Berlin</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/clovis/clovis-sunrisehub-live-studio-session-2" target="_blank">
+                            <span>SunriseHub Live Studio Session</span>
+                            <span class="track-source">Studio · May 2021</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>Downtempo & Ambient</h3>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/radiod59b/radiod59b-guest-mix-w-cleymoore-clovis" target="_blank">
+                            <span>RADIO.D59B Guest Mix — w/ Cleymoore</span>
+                            <span class="track-source">D59B Radio</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/experimentintrinsic/podcast-series-34-clovis" target="_blank">
+                            <span>Podcast Series 34</span>
+                            <span class="track-source">Experiment Intrinsic</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/clovis/kasheme-living-room-session-sept22" target="_blank">
+                            <span>Kasheme Living Room Session</span>
+                            <span class="track-source">Zurich · Sept 2022</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/sleep-is-commercial/049-clovis-cloud-coloring" target="_blank">
+                            <span>Cloud Coloring — 049</span>
+                            <span class="track-source">Sleep is Commercial</span>
+                        </a>
+                    </div>
+                    <div class="track-item">
+                        <a href="https://soundcloud.com/cultkitchen/cultkitchen-radio-show-episode-13-clovis" target="_blank">
+                            <span>CultKitchen Radio Show #13</span>
+                            <span class="track-source">Jazz · CultKitchen</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 30px;">
+                    <a href="https://soundcloud.com/clovis" target="_blank">More on SoundCloud — @clovis →</a>
+                </p>
+            </section>
+
+            <!-- Releases -->
+            <section id="releases">
+                <h2>Releases</h2>
+                <div class="releases-grid">
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/moritat-artwork.jpg" alt="Moritat — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>Moritat</h3>
+                            <p>Self-released · 2026</p>
+                            <a href="https://clovisdj.bandcamp.com/track/moritat" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/the-river-artwork.jpg" alt="The River — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>The River</h3>
+                            <p>Self-released · 2021</p>
+                            <a href="https://clovisdj.bandcamp.com/track/the-river" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/lost-found-artwork.jpg" alt="Lost & Found EP — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>Lost & Found EP</h3>
+                            <p>Body Parts · 2020</p>
+                            <a href="https://bodypartsrecs.bandcamp.com/album/lost-found-ep" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/almas-tea-artwork.jpg" alt="Alma's Tea — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>Alma's Tea</h3>
+                            <p>Self-released · 2020</p>
+                            <a href="https://clovisdj.bandcamp.com/track/almas-tea" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/halftime-artwork.jpg" alt="Halftime — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>Halftime</h3>
+                            <p>Self-released · 2018</p>
+                            <a href="https://clovisdj.bandcamp.com/track/halftime" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/mojave-artwork.jpg" alt="Mojave — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>Mojave</h3>
+                            <p>Self-released · 2018</p>
+                            <a href="https://clovisdj.bandcamp.com/track/mojave" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                    <div class="release-item">
+                        <div class="release-artwork">
+                            <img src="assets/images/interpretive-loop-artwork.jpg" alt="Interpretive Loop — artwork">
+                        </div>
+                        <div class="release-info">
+                            <h3>Interpretive Loop</h3>
+                            <p>Self-released · 2018</p>
+                            <a href="https://clovisdj.bandcamp.com/track/interpretive-loop" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live -->
+            <section id="live">
+                <h2>Live</h2>
+                <div class="video-list">
+                    <div class="video-item">
+                        <h3>Clovis — Live Studio Session</h3>
+                        <p>Live Studio Session — curated by Kaufland</p>
+                    </div>
+                    <div class="video-item">
+                        <h3>themuddshow @ Hoppetosse</h3>
+                        <p>themuddshow @ Hoppetosse — Berlin</p>
+                    </div>
+                    <div class="video-item">
+                        <h3>Live from W37 Berlin</h3>
+                        <p>Live from W37 — Berlin</p>
+                    </div>
+                    <div class="video-item">
+                        <h3>TROI presents: Conexiune with Clovis</h3>
+                        <p>TROI presents : Conexiune</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Venues -->
+            <section id="venues">
+                <h2>Venues</h2>
+                <div class="venues-list">
+                    <div class="venue-item">
+                        <span class="venue-name">Club der Visionaere</span>
+                        <span class="venue-location">Berlin</span>
+                    </div>
+                    <div class="venue-item">
+                        <span class="venue-name">Hoppetosse</span>
+                        <span class="venue-location">Berlin</span>
+                    </div>
+                    <div class="venue-item">
+                        <span class="venue-name">Renate</span>
+                        <span class="venue-location">Berlin</span>
+                    </div>
+                    <div class="venue-item">
+                        <span class="venue-name">Guesthouse</span>
+                        <span class="venue-location">Bucharest</span>
+                    </div>
+                    <div class="venue-item">
+                        <span class="venue-name">Kasheme</span>
+                        <span class="venue-location">Zurich</span>
+                    </div>
+                    <div class="venue-item">
+                        <span class="venue-name">The Standard</span>
+                        <span class="venue-location">Los Angeles</span>
+                    </div>
+                    <div class="venue-item">
+                        <span class="venue-name">Perlone</span>
+                        <span class="venue-location">Nice</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gigs -->
+            <section id="gigs">
+                <h2>Gigs</h2>
+                <p style="color: #888;">Loading...</p>
+            </section>
+
+            <!-- Press -->
+            <section id="press">
+                <h2>Photos</h2>
+                <div class="photos-grid">
+                    <div class="photo-item">
+                        <img src="assets/images/clovis-press-photo.jpg" alt="Clovis — press photo">
+                        <p>Photo — Jamie.jar</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/sunwaves-21.jpg" alt="Sunwaves 21">
+                        <p>Sunwaves 21 Photo — Karim Rosati</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/clovis-press-photo-2.jpg" alt="Clovis — press photo">
+                        <p>Photo — Jamie.jar</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/clovis-press-photo-3.jpg" alt="Clovis — press photo">
+                        <p>Photo — Jamie.jar</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/clovis-press-photo-4.jpg" alt="Clovis — press photo">
+                        <p>Photo — Jamie.jar</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Videos</h3>
+                <div class="video-item" style="margin-bottom: 20px;">
+                    <h3>Club der Visionaere — Berlin</h3>
+                    <p>Live — 01 | Live — 02</p>
+                </div>
+
+                <h3 style="margin-top: 30px;">Articles</h3>
+                <div class="articles-list">
+                    <a href="https://xlr8r.com/podcasts/podcast-579-clovis/" target="_blank" class="article-link">
+                        <span>XLR8R Podcast 579 — mix + interview</span>
+                        <span class="article-type">POCAST · INTERVIEW</span>
+                        <span>Read ↗</span>
+                    </a>
+                    <a href="https://xlr8r.com/features/bubblin-up-clovis/" target="_blank" class="article-link">
+                        <span>XLR8R Bubblin' Up — Clovis</span>
+                        <span class="article-type">FEATURE</span>
+                        <span>Read ↗</span>
+                    </a>
+                    <a href="https://meoko.net/under-the-meoko-microscope-clovis-mix/" target="_blank" class="article-link">
+                        <span>MEOKO Under the MEOKO Microscope</span>
+                        <span class="article-type">INTERVIEW · MIX</span>
+                        <span>Read ↗</span>
+                    </a>
+                    <a href="https://glazba.hr/citaj/intervju/clovis-dj-unfold-depo/" target="_blank" class="article-link">
+                        <span>GLAZBA Unfold @ Depo — interview</span>
+                        <span class="article-type">INTERVIEW · 2023</span>
+                        <span>Read ↗</span>
+                    </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; padding: 20px; border: 1px solid #333;">
+                    <p style="font-size: 12px; margin-bottom: 15px;">High-resolution photos, videos and technical rider available for promoters and press. Enter your access code to download.</p>
+                    <button class="unlock-btn">Unlock</button>
+                    <p style="font-size: 10px; color: #888;">No code yet? <a href="mailto:booking">Email booking</a></p>
+                </div>
+            </section>
+
+            <!-- Booking -->
+            <section id="booking">
+                <h2>Booking</h2>
+                <p style="color: #888; margin-bottom: 20px;">Short bio, photos and rider — everything a booker needs, one click away.</p>
                 
-                <div class="label">LABEL</div>
-                <div class="value">Understory — co-founder</div>
-                
-                <div class="label">ALONGSIDE</div>
-                <div class="value">Rhadoo · Cesar Merveille</div>
-                <div class="value">Shaun Reeves · Topper · Herodot</div>
-                
-                <div class="label">SELECTED FESTIVALS</div>
-                <div class="value">Sunwaves · Dimensions</div>
-                <div class="value">Waha · Danube · BPM</div>
-            </div>
-        </div>
-
-        <p style="text-align: center; font-style: italic; color: #888; margin: 30px 0;">
-            Mood, context and atmosphere — never any fixed formula.
-        </p>
-    </section>
-
-    <section class="bio">
-        <div class="language-toggle">
-            <button class="lang-btn active" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="fr">FR</button>
-        </div>
-
-        <div class="bio-content en">
-            <p><strong>Clovis</strong> found his way behind the decks at nineteen. More than two decades later, the Los Angeles native has moved through some of dance music's most distinctive scenes — from New York to Bucharest and now Berlin, where he holds a residency at Club der Visionaere and co-runs Understory with Matt Foley.</p>
-            <p>His path has taken him from late-night Los Angeles warehouses to festivals including Sunwaves, Dimensions, Waha and Danube, and into rooms such as Guesthouse, Renate and Hoppetosse — often sharing lineups with Rhadoo, Cesar Merveille, Shaun Reeves and Topper.</p>
-            <p>What connects it all is a refusal to settle into one mode. A dark warehouse, a slower daytime session, a leftfield podcast — each calls for something different. The room, the hour and the people come first. Range without losing the thread; eclecticism without becoming arbitrary. Mood, context and atmosphere over any fixed formula.</p>
-        </div>
-
-        <div class="bio-content fr" style="display: none;">
-            <p><strong>Clovis</strong> trouve son chemin derrière les platines à dix-neuf ans. Plus de deux décennies plus tard, ce natif de Los Angeles a traversé certaines des scènes les plus singulières de la dance music — de New York à Bucarest, puis Berlin, où il est résident du Club der Visionaere et co-dirige Understory avec Matt Foley.</p>
-            <p>Son parcours l'a mené des warehouses nocturnes de Los Angeles aux festivals Sunwaves, Dimensions, Waha et Danube, et dans des salles comme Guesthouse, Renate ou Hoppetosse — partageant souvent l'affiche avec Rhadoo, Cesar Merveille, Shaun Reeves et Topper.</p>
-            <p>Ce qui relie tout ça : le refus de s'installer dans un seul registre. Une warehouse sombre, une session de jour plus lente, un podcast leftfield — chaque contexte appelle autre chose. La salle, l'heure et les gens passent d'abord. De l'étendue sans perdre le fil ; de l'éclectisme sans devenir arbitraire. L'humeur, le contexte et l'atmosphère avant toute formule figée.</p>
-        </div>
-    </section>
-
-    <section id="listen">
-        <h2>Listen</h2>
-
-        <div class="category">
-            <h3>Dance</h3>
-            <div class="track-item">
-                <a href="https://soundcloud.com/danubebln/danube-podcast-019-clovis-b2b-topper" target="_blank">
-                    <span>Danube Podcast 019 — b2b Topper</span>
-                    <span class="track-source">Danube · SoundCloud</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/meraki-world-tour/clovis-at-meraki-003-berlin" target="_blank">
-                    <span>Live at Meraki [003 · Berlin]</span>
-                    <span class="track-source">Meraki · Live recording</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/meoko/meoko-podcast-series-topper-b2b-clovis-nye-2024-anhalt-berlin" target="_blank">
-                    <span>MEOKO Podcast Series — Topper b2b Clovis NYE</span>
-                    <span class="track-source">Anhalt, Berlin</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/clovis/clovis-sunrisehub-live-studio-session-2" target="_blank">
-                    <span>SunriseHub Live Studio Session</span>
-                    <span class="track-source">Studio · May 2021</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="category">
-            <h3>Downtempo & Ambient</h3>
-            <div class="track-item">
-                <a href="https://soundcloud.com/radiod59b/radiod59b-guest-mix-w-cleymoore-clovis" target="_blank">
-                    <span>RADIO.D59B Guest Mix — w/ Cleymoore</span>
-                    <span class="track-source">D59B Radio</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/experimentintrinsic/podcast-series-34-clovis" target="_blank">
-                    <span>Podcast Series 34</span>
-                    <span class="track-source">Experiment Intrinsic</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/clovis/kasheme-living-room-session-sept22" target="_blank">
-                    <span>Kasheme Living Room Session</span>
-                    <span class="track-source">Zurich · Sept 2022</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/sleep-is-commercial/049-clovis-cloud-coloring" target="_blank">
-                    <span>Cloud Coloring — 049</span>
-                    <span class="track-source">Sleep is Commercial</span>
-                </a>
-            </div>
-            <div class="track-item">
-                <a href="https://soundcloud.com/cultkitchen/cultkitchen-radio-show-episode-13-clovis" target="_blank">
-                    <span>CultKitchen Radio Show #13</span>
-                    <span class="track-source">Jazz · CultKitchen</span>
-                </a>
-            </div>
-        </div>
-
-        <p style="text-align: center; margin-top: 30px;">
-            <a href="https://soundcloud.com/clovis" target="_blank">More on SoundCloud — @clovis →</a>
-        </p>
-    </section>
-
-    <section id="productions">
-        <h2>Productions</h2>
-        <div class="releases-grid">
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/moritat-artwork.jpg" alt="Moritat — artwork">
+                <div class="booking-actions">
+                    <button class="copy-bio-btn">Copy short bio</button>
+                    <a href="#" class="download-link" style="text-align: center;">↓ Press kit ZIP</a>
+                    <a href="clovis-rider.txt" class="download-link" style="text-align: center;">Technical rider — PDF</a>
                 </div>
-                <div class="release-info">
-                    <h3>Moritat</h3>
-                    <p>Self-released · 2026</p>
-                    <a href="https://clovisdj.bandcamp.com/track/moritat" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/the-river-artwork.jpg" alt="The River — artwork">
-                </div>
-                <div class="release-info">
-                    <h3>The River</h3>
-                    <p>Self-released · 2021</p>
-                    <a href="https://clovisdj.bandcamp.com/track/the-river" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/lost-found-artwork.jpg" alt="Lost & Found EP — artwork">
-                </div>
-                <div class="release-info">
-                    <h3>Lost & Found EP</h3>
-                    <p>Body Parts · 2020</p>
-                    <a href="https://bodypartsrecs.bandcamp.com/album/lost-found-ep" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/almas-tea-artwork.jpg" alt="Alma's Tea — artwork">
-                </div>
-                <div class="release-info">
-                    <h3>Alma's Tea</h3>
-                    <p>Self-released · 2020</p>
-                    <a href="https://clovisdj.bandcamp.com/track/almas-tea" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/halftime-artwork.jpg" alt="Halftime — artwork">
-                </div>
-                <div class="release-info">
-                    <h3>Halftime</h3>
-                    <p>Self-released · 2018</p>
-                    <a href="https://clovisdj.bandcamp.com/track/halftime" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/mojave-artwork.jpg" alt="Mojave — artwork">
-                </div>
-                <div class="release-info">
-                    <h3>Mojave</h3>
-                    <p>Self-released · 2018</p>
-                    <a href="https://clovisdj.bandcamp.com/track/mojave" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-            <div class="release-item">
-                <div class="release-artwork">
-                    <img src="assets/images/interpretive-loop-artwork.jpg" alt="Interpretive Loop — artwork">
-                </div>
-                <div class="release-info">
-                    <h3>Interpretive Loop</h3>
-                    <p>Self-released · 2018</p>
-                    <a href="https://clovisdj.bandcamp.com/track/interpretive-loop" target="_blank" class="release-link">Listen / Buy — Bandcamp ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="watch">
-        <h2>Watch</h2>
-        <div class="video-list">
-            <div class="video-item">
-                <h3>Clovis — Live Studio Session</h3>
-                <p>Live Studio Session — curated by Kaufland</p>
-            </div>
-            <div class="video-item">
-                <h3>themuddshow @ Hoppetosse</h3>
-                <p>themuddshow @ Hoppetosse — Berlin</p>
-            </div>
-            <div class="video-item">
-                <h3>Live from W37 Berlin</h3>
-                <p>Live from W37 — Berlin</p>
-            </div>
-            <div class="video-item">
-                <h3>TROI presents: Conexiune with Clovis</h3>
-                <p>TROI presents : Conexiune</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="appearances">
-        <h2>Selected appearances</h2>
-        <div class="venues-list">
-            <div class="venue-item">
-                <span class="venue-name">Club der Visionaere</span>
-                <span class="venue-location">Berlin</span>
-            </div>
-            <div class="venue-item">
-                <span class="venue-name">Hoppetosse</span>
-                <span class="venue-location">Berlin</span>
-            </div>
-            <div class="venue-item">
-                <span class="venue-name">Renate</span>
-                <span class="venue-location">Berlin</span>
-            </div>
-            <div class="venue-item">
-                <span class="venue-name">Guesthouse</span>
-                <span class="venue-location">Bucharest</span>
-            </div>
-            <div class="venue-item">
-                <span class="venue-name">Kasheme</span>
-                <span class="venue-location">Zurich</span>
-            </div>
-            <div class="venue-item">
-                <span class="venue-name">The Standard</span>
-                <span class="venue-location">Los Angeles</span>
-            </div>
-            <div class="venue-item">
-                <span class="venue-name">Perlone</span>
-                <span class="venue-location">Nice</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="upcoming">
-        <h2>Upcoming gigs</h2>
-        <p style="color: #888;">Loading...</p>
-    </section>
-
-    <section id="press">
-        <h2>Press Photos</h2>
-        <div class="photos-grid">
-            <div class="photo-item">
-                <img src="assets/images/clovis-press-photo.jpg" alt="Clovis — press photo">
-                <p>Photo — Jamie.jar</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/images/sunwaves-21.jpg" alt="Sunwaves 21">
-                <p>Sunwaves 21 Photo — Karim Rosati</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/images/clovis-press-photo-2.jpg" alt="Clovis — press photo">
-                <p>Photo — Jamie.jar</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/images/clovis-press-photo-3.jpg" alt="Clovis — press photo">
-                <p>Photo — Jamie.jar</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/images/clovis-press-photo-4.jpg" alt="Clovis — press photo">
-                <p>Photo — Jamie.jar</p>
-            </div>
-        </div>
-
-        <h3 style="margin-top: 30px;">Videos</h3>
-        <div class="video-item" style="margin-bottom: 20px;">
-            <h3>Club der Visionaere — Berlin</h3>
-            <p>Live — 01 | Live — 02</p>
-        </div>
-
-        <h3 style="margin-top: 30px;">Articles</h3>
-        <div class="articles-list">
-            <a href="https://xlr8r.com/podcasts/podcast-579-clovis/" target="_blank" class="article-link">
-                <span>XLR8R Podcast 579 — mix + interview</span>
-                <span class="article-type">POCAST · INTERVIEW</span>
-                <span>Read ↗</span>
-            </a>
-            <a href="https://xlr8r.com/features/bubblin-up-clovis/" target="_blank" class="article-link">
-                <span>XLR8R Bubblin' Up — Clovis</span>
-                <span class="article-type">FEATURE</span>
-                <span>Read ↗</span>
-            </a>
-            <a href="https://meoko.net/under-the-meoko-microscope-clovis-mix/" target="_blank" class="article-link">
-                <span>MEOKO Under the MEOKO Microscope</span>
-                <span class="article-type">INTERVIEW · MIX</span>
-                <span>Read ↗</span>
-            </a>
-            <a href="https://glazba.hr/citaj/intervju/clovis-dj-unfold-depo/" target="_blank" class="article-link">
-                <span>GLAZBA Unfold @ Depo — interview</span>
-                <span class="article-type">INTERVIEW · 2023</span>
-                <span>Read ↗</span>
-            </a>
-        </div>
-
-        <div style="text-align: center; margin-top: 30px; padding: 20px; border: 1px solid #333;">
-            <p style="font-size: 12px; margin-bottom: 15px;">High-resolution photos, videos and technical rider available for promoters and press. Enter your access code to download.</p>
-            <button class="unlock-btn">Unlock</button>
-            <p style="font-size: 10px; color: #888;">No code yet? <a href="mailto:booking">Email booking</a></p>
-        </div>
-    </section>
-
-    <section id="booking">
-        <h2>Booking</h2>
-        <p style="color: #888; margin-bottom: 20px;">Short bio, photos and rider — everything a booker needs, one click away.</p>
-        
-        <div class="booking-actions">
-            <button class="copy-bio-btn">Copy short bio</button>
-            <a href="#" class="download-link" style="text-align: center;">↓ Press kit ZIP</a>
-            <a href="clovis-rider.txt" class="download-link" style="text-align: center;">Technical rider — PDF</a>
-        </div>
-
-        <div class="booking-form">
-            <h3>Booking request</h3>
-            <form id="bookingForm">
-                <div class="form-group">
-                    <label>Date</label>
-                    <input type="text" name="date">
+                <div class="booking-form">
+                    <h3>Booking request</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="text" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" name="city">
+                        </div>
+                        <div class="form-group">
+                            <label>Venue / event</label>
+                            <input type="text" name="venue">
+                        </div>
+                        <div class="form-group">
+                            <label>Budget</label>
+                            <input type="text" name="budget">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send request →</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label>City</label>
-                    <input type="text" name="city">
-                </div>
-                <div class="form-group">
-                    <label>Venue / event</label>
-                    <input type="text" name="venue">
-                </div>
-                <div class="form-group">
-                    <label>Budget</label>
-                    <input type="text" name="budget">
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send request →</button>
-            </form>
-        </div>
-    </section>
+            </section>
 
-    <section class="contact-section">
-        <h2>Contact</h2>
-        <div class="contact-item">
-            <div class="contact-label">Booking</div>
-            <a href="mailto:clovisdj@gmail.com" class="contact-link">clovisdj@gmail.com</a>
-        </div>
-        <div class="social-links">
-            <a href="https://www.instagram.com/clovis_understory/" target="_blank" class="social-link">Instagram @clovis_understory</a>
-            <a href="https://soundcloud.com/clovis" target="_blank" class="social-link">SoundCloud @clovis</a>
-            <a href="https://ra.co/dj/clovis" target="_blank" class="social-link">Resident Advisor ra.co/dj/clovis</a>
-            <a href="https://clovisdj.bandcamp.com" target="_blank" class="social-link">Bandcamp clovisdj.bandcamp.com</a>
-        </div>
-        <div class="footer">
-            <p>Clovis · 2026 Berlin — Worldwide</p>
-            <a href="https://deckit.art" target="_blank">deckit.*N°006*</a>
-        </div>
-    </section>
+            <!-- Contact -->
+            <section id="contact" class="contact-section">
+                <h2>Contact</h2>
+                <div class="contact-item">
+                    <div class="contact-label">Booking</div>
+                    <a href="mailto:clovisdj@gmail.com" class="contact-link">clovisdj@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/clovis_understory/" target="_blank" class="social-link">Instagram @clovis_understory</a>
+                    <a href="https://soundcloud.com/clovis" target="_blank" class="social-link">SoundCloud @clovis</a>
+                    <a href="https://ra.co/dj/clovis" target="_blank" class="social-link">Resident Advisor ra.co/dj/clovis</a>
+                    <a href="https://clovisdj.bandcamp.com" target="_blank" class="social-link">Bandcamp clovisdj.bandcamp.com</a>
+                </div>
+                <div class="footer">
+                    <p>Clovis · 2026 Berlin — Worldwide</p>
+                    <a href="https://deckit.art" target="_blank">deckit.*N°006*</a>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <!-- Modal -->
     <div class="modal" id="pressModal">
