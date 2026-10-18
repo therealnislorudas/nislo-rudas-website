@@ -740,6 +740,22 @@ section.block.is-visible {
     height: 13px;
 }
 
+.yt-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.yt-featured iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .yt-title {
     display: block;
     padding: 11px 2px 0;
