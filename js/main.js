@@ -131,7 +131,7 @@ if (lb) {
 }
 
 // ============= EMAIL COPY =============
-var getEmail = function() { return 'hello@ruda.studio'; };
+var getEmail = function() { return 'nislorudas27@gmail.com'; };
 var toast = document.getElementById('toast');
 var toastTimeout;
 
@@ -179,7 +179,7 @@ document.querySelectorAll('[data-booking]').forEach(function(el) {
 });
 
 // ============= COPY SHORT BIO =============
-var BIO_SHORT = "Nislo Rudas (Nislo Emanuel Rudas Guerra) was born on February 27, 1997, in David, Chiriquí, Panama. DJ and producer known for sophisticated and deeply immersive sets, blending minimalistic and hypnotic techno with dark atmospheric sounds. Founder of Vagabundos production company. Part of Wizards Collective (Guatemala) and Booth (Panama). Released on Mudita Records, Kitu Records, FINNEST.";
+var BIO_SHORT = "Nislo Rudas is a Panamanian DJ born in David, Chiriquí, whose sound moves between minimal and tech house — groove, hypnotic rhythms and a dancefloor-oriented selection. Founder of Vagabundos. Part of Wizards Collective (Guatemala) and Booth (Panamá). Released on Mudita Records, Kitu Records, FINNEST.";
 var cb = document.getElementById('bk-copybio');
 if (cb) {
     cb.addEventListener('click', function() {
@@ -217,14 +217,35 @@ if (bz) {
 }
 
 // ============= BOOKING FORM =============
+// Web3Forms access key — get it at https://web3forms.com with nislorudas27@gmail.com
+var WEB3FORMS_KEY = '7100abcd-b24f-490e-bae7-9a2293f3cc1a';
+
 var bf = document.getElementById('bk-form');
 if (bf) {
     bf.addEventListener('submit', function(e) {
         e.preventDefault();
+        var status = document.getElementById('bk-status');
+        var btn = bf.querySelector('button[type="submit"]');
         var d = new FormData(bf);
-        var subj = 'Booking request — ' + (d.get('date') || 'TBD') + ' · ' + (d.get('city') || '');
-        var body = 'Date: ' + (d.get('date') || '-') + '%0D%0ACity: ' + (d.get('city') || '-') + '%0D%0AVenue / event: ' + (d.get('venue') || '-') + '%0D%0ABudget: ' + (d.get('budget') || '-') + '%0D%0A%0D%0A' + encodeURIComponent(d.get('msg') || '');
-        window.location.href = 'mailto:' + getEmail() + '?subject=' + encodeURIComponent(subj) + '&body=' + body;
+        d.append('access_key', WEB3FORMS_KEY);
+        d.append('subject', 'Booking request — ' + (d.get('date') || 'TBD') + ' · ' + (d.get('city') || '') + ', ' + (d.get('country') || ''));
+        d.append('from_name', 'nislorudas.com booking form');
+        if (status) status.textContent = 'Sending…';
+        if (btn) btn.disabled = true;
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: d })
+            .then(function(r) { return r.json(); })
+            .then(function(res) {
+                if (res.success) {
+                    if (status) status.textContent = 'Request sent — I\'ll get back to you soon.';
+                    bf.reset();
+                } else {
+                    if (status) status.textContent = 'Something went wrong — email ' + getEmail() + ' directly.';
+                }
+            })
+            .catch(function() {
+                if (status) status.textContent = 'Connection error — email ' + getEmail() + ' directly.';
+            })
+            .finally(function() { if (btn) btn.disabled = false; });
     });
 }
 
