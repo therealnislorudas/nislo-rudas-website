@@ -882,7 +882,7 @@ section.block.is-visible {
 .visual-card:hover { border-color: var(--line-strong); }
 .visual-card:hover img { transform: scale(1.04); opacity: 1; }
 
-.visual-card:hover .press-sub {
+.press-sub {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10.5px;
