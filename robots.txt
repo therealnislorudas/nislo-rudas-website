@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nislo-rudas-web.vercel.app/sitemap.xml

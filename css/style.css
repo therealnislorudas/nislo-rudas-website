@@ -823,43 +823,6 @@ section.block.is-visible {
 /* ============= DATES ============= */
 .dates { display: flex; flex-direction: column; max-width: 760px; }
 
-.date-row {
-    display: grid;
-    grid-template-columns: 110px 1fr auto;
-    gap: 24px;
-    align-items: baseline;
-    padding: 20px 0;
-    border-top: 1px solid var(--line);
-    transition: padding 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.date-row:last-child { border-bottom: 1px solid var(--line); }
-
-.date-when {
-    font-family: 'IBM Plex Mono', -apple-system, monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--fg-dim);
-    font-weight: 500;
-}
-
-.date-venue {
-    font-size: clamp(18px, 1.5vw, 22px);
-    font-weight: 500;
-    color: var(--fg);
-    letter-spacing: -0.005em;
-}
-
-.date-city {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--fg-dim);
-    font-weight: 500;
-    white-space: nowrap;
-}
-
 .dates-empty {
     font-size: 14px;
     color: var(--fg-dim);
@@ -919,40 +882,7 @@ section.block.is-visible {
 .visual-card:hover { border-color: var(--line-strong); }
 .visual-card:hover img { transform: scale(1.04); opacity: 1; }
 
-.visual-caption {
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    z-index: 2;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-}
-
-.visual-card:hover .visual-caption { opacity: 1; transform: translateY(0); }
-
-.visual-caption-text {
-    display: block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-style: italic;
-    font-size: 15px;
-    color: #efece4;
-    line-height: 1.35;
-}
-
-.visual-caption-credit {
-    display: block;
-    margin-top: 4px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9.5px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #b8b3a8;
-}
-
-.press-sub {
+.visual-card:hover .press-sub {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10.5px;
@@ -1410,7 +1340,6 @@ button.pk-btn {
 .hero-socials {
     margin-top: 28px;
 }
-
 
 /* ============= FOOTER ============= */
 footer {
